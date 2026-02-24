@@ -8,8 +8,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>{str}</Text>
-      <StatusBar style="auto" />
+      <View style={styles.row}>
+        <View style={styles.box}></View>
+        <View style={styles.box}></View>
+      </View>
+      <View style={styles.row}>
+        <View style={styles.box}></View>
+        <View style={styles.box}></View>
+      </View>
     </View>
   );
 }
@@ -21,4 +27,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  row: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  row:{
+    flexDirection: "row",
+  },
+  box:{
+    width: 100,
+    height: 100,
+    backgroundColor: "maroon",
+    margin: 5,
+  }
 });
