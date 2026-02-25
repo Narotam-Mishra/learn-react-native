@@ -2022,3 +2022,106 @@ export default App;
 
 ## M3_Lec-3 : Text (05:24)
 
+## 📝 React Native – `Text` Component (Short Notes)
+
+### 🔹 What is `Text`?
+
+`Text` is used to **display text content** in React Native apps.
+
+Unlike web:
+
+* You **must wrap all text inside `<Text>`**
+* You cannot directly write strings inside `<View>`
+
+```js
+import { Text } from 'react-native';
+```
+
+---
+
+## 🧱 Basic Example
+
+```jsx
+import React from 'react';
+import { View, Text } from 'react-native';
+
+const App = () => {
+  return (
+    <View style={{ marginTop: 50 }}>
+      <Text>Hello React Native 👋</Text>
+    </View>
+  );
+};
+
+export default App;
+```
+
+---
+
+## 🔑 Important Props
+
+| Prop            | Description                 |
+| --------------- | --------------------------- |
+| `style`         | Apply text styling          |
+| `numberOfLines` | Limit number of lines       |
+| `ellipsizeMode` | Add `...` if text overflows |
+| `onPress`       | Handle press event          |
+| `selectable`    | Allow text selection        |
+
+---
+
+## 🎨 Common Styling Properties
+
+```jsx
+<Text
+  style={{
+    fontSize: 18,
+    color: 'blue',
+    fontWeight: 'bold',
+    textAlign: 'center'
+  }}
+>
+  Styled Text
+</Text>
+```
+
+Common styles:
+
+* `fontSize`
+* `color`
+* `fontWeight`
+* `textAlign`
+* `fontStyle`
+* `lineHeight`
+
+---
+
+## 🧩 Nested Text
+
+You can nest `<Text>` components:
+
+```jsx
+<Text>
+  Hello <Text style={{ fontWeight: 'bold' }}>World</Text>
+</Text>
+```
+
+---
+
+## ⚠️ Important Rules
+
+* ❌ Text cannot exist outside `<Text>`
+* ❌ `<View>` cannot be placed inside `<Text>`
+* ✅ `<Text>` can be nested inside `<Text>`
+
+---
+
+## 📌 When to Use?
+
+✔ Display static text
+✔ Dynamic content
+✔ Clickable text
+✔ Styled headings
+
+---
+

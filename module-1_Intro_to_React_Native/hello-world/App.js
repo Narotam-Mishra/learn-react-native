@@ -2,17 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-  const handlePress = () => {
-    console.log("Button pressed!!");
-  }
-
-  const name = "React Native";
-  const age = 20;
-  const str = `Hello ${name} with ${age} years of dominance`;
-
   return (
     <View style={styles.container}>
-      <Button color={"red"} title="Submit" onPress={handlePress}></Button>
+      <Text style={[styles.text, styles.bold]}>Mobile App dev using React Native</Text>
+      <Text style={[styles.text, styles.italic]}>React Native by Meta for Mobile</Text>
+      <Text style={[styles.text, styles.underline]}>React Native is cool</Text>
     </View>
   );
 }
@@ -20,7 +14,20 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#fff",
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text:{
+    fontSize: 24,
+  },
+  bold:{
+    fontStyle: "bold",
+  },
+  italic:{
+    fontStyle: "italic"
+  },
+  underline:{
+    textDecorationLine: "underline"
   }
 });
