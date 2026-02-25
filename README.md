@@ -1705,3 +1705,320 @@ This allows you to:
 * Iterate quickly
 
 ---
+
+## M3_Lec-1 : View (03:46)
+
+## 📦 React Native – `View` Component Notes
+
+### 🔹 What is `View`?
+
+`View` is the **most fundamental component** in React Native.
+
+It is similar to:
+
+* `<div>` in web development
+* A **container** that supports layout, styling, touch handling, and accessibility
+
+It is used to:
+
+* Wrap other components
+* Create layouts
+* Apply styling
+* Handle gestures
+
+```js
+import { View } from 'react-native';
+```
+
+---
+
+## 🧱 Basic Example
+
+```jsx
+import React from 'react';
+import { View, Text } from 'react-native';
+
+const App = () => {
+  return (
+    <View style={{ padding: 20 }}>
+      <Text>Hello React Native</Text>
+    </View>
+  );
+};
+
+export default App;
+```
+
+---
+
+## 🎨 Styling in `View`
+
+React Native uses **Flexbox by default** (but slightly different from CSS on web).
+
+### 🔹 Common Style Properties
+
+| Property          | Description                            |
+| ----------------- | -------------------------------------- |
+| `flex`            | Defines how much space component takes |
+| `flexDirection`   | Row or column layout                   |
+| `justifyContent`  | Align items vertically (main axis)     |
+| `alignItems`      | Align items horizontally (cross axis)  |
+| `padding`         | Space inside the component             |
+| `margin`          | Space outside the component            |
+| `backgroundColor` | Background color                       |
+| `borderWidth`     | Border thickness                       |
+| `borderRadius`    | Rounded corners                        |
+
+---
+
+### 🧭 Flexbox Example
+
+```jsx
+<View style={{
+  flex: 1,
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center'
+}}>
+  <View style={{ width: 50, height: 50, backgroundColor: 'red' }} />
+  <View style={{ width: 50, height: 50, backgroundColor: 'blue' }} />
+</View>
+```
+
+---
+
+## 📐 Default Flex Behavior
+
+In React Native:
+
+| Web CSS                       | React Native                    |
+| ----------------------------- | ------------------------------- |
+| Default `flex-direction: row` | Default `flexDirection: column` |
+
+So components stack **vertically by default**.
+
+---
+
+## 🎯 Layout Concepts
+
+### 1️⃣ `flex: 1`
+
+Tells the View to take available space.
+
+```jsx
+<View style={{ flex: 1 }} />
+```
+
+### 2️⃣ Nested Views
+
+Views can be nested for complex UI:
+
+```jsx
+<View>
+  <View>
+    <Text>Nested</Text>
+  </View>
+</View>
+```
+
+---
+
+## 🖐 Touch Handling
+
+`View` can respond to touch events:
+
+```jsx
+<View
+  onTouchStart={() => console.log("Touched")}
+>
+</View>
+```
+
+But usually we use:
+
+* `TouchableOpacity`
+* `Pressable`
+* `TouchableWithoutFeedback`
+
+For better interaction handling.
+
+---
+
+## ♿ Accessibility
+
+Important props:
+
+```jsx
+<View accessible={true} accessibilityLabel="Profile section">
+```
+
+Common props:
+
+* `accessible`
+* `accessibilityLabel`
+* `accessibilityHint`
+* `accessibilityRole`
+
+---
+
+## ⚡ Performance Notes
+
+* Avoid too many deeply nested Views
+* Use `StyleSheet.create()` for better performance
+* Avoid inline styles in large apps
+
+Example:
+
+```js
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  }
+});
+```
+
+---
+
+## 🧠 Important Props Summary
+
+| Prop            | Purpose                |
+| --------------- | ---------------------- |
+| `style`         | Apply styling          |
+| `pointerEvents` | Control touch behavior |
+| `testID`        | Used for testing       |
+| `onLayout`      | Get layout dimensions  |
+| `accessible`    | Accessibility support  |
+
+---
+
+## 🔥 `pointerEvents` Values
+
+| Value      | Meaning                              |
+| ---------- | ------------------------------------ |
+| `auto`     | Default behavior                     |
+| `none`     | View does not receive touches        |
+| `box-none` | View ignores touch, children respond |
+| `box-only` | Only View responds, not children     |
+
+---
+
+## 📊 Difference: View vs Text
+
+| View             | Text                |
+| ---------------- | ------------------- |
+| Container        | Displays text       |
+| Can contain View | Cannot contain View |
+| Layout component | Inline content      |
+
+---
+
+## 🧩 When to Use `View`?
+
+Use `View` when:
+
+* Creating layout structure
+* Grouping components
+* Applying styling containers
+* Managing screen sections
+
+---
+
+## 💡 Pro Tips (For You 👨‍💻)
+
+Since you're working with **React & React Native**, remember:
+
+* Think of `View` as your layout building block.
+* 80% of mobile UI layout = combination of nested Views.
+* Master Flexbox deeply — it’s the core of RN layout.
+
+---
+
+## M3_Lec-2 : Button (03:13)
+
+## 🔘 React Native – `Button` Component (Short Notes)
+
+### 🔹 What is `Button`?
+
+`Button` is a **basic built-in component** used to trigger actions when pressed.
+
+It is simple and minimal — mostly used for quick functionality.
+
+```js
+import { Button } from 'react-native';
+```
+
+---
+
+## 🧱 Basic Example
+
+```jsx
+import React from 'react';
+import { View, Button, Alert } from 'react-native';
+
+const App = () => {
+  return (
+    <View style={{ marginTop: 50 }}>
+      <Button
+        title="Click Me"
+        onPress={() => Alert.alert("Button Pressed")}
+      />
+    </View>
+  );
+};
+
+export default App;
+```
+
+---
+
+## 🔑 Important Props
+
+| Prop       | Description                                       |
+| ---------- | ------------------------------------------------- |
+| `title`    | Text displayed on button                          |
+| `onPress`  | Function called when pressed                      |
+| `color`    | Button color (text on iOS, background on Android) |
+| `disabled` | Disable the button                                |
+
+---
+
+### Example with Props
+
+```jsx
+<Button
+  title="Submit"
+  color="green"
+  disabled={false}
+  onPress={() => console.log("Submitted")}
+/>
+```
+
+---
+
+## ⚠️ Limitations
+
+* Very limited styling options
+* Cannot customize height, width, borderRadius
+* Looks different on iOS and Android
+
+👉 For custom designs, use:
+
+* `Pressable`
+* `TouchableOpacity`
+* Custom button using `View` + `Text`
+
+---
+
+## 📌 When to Use?
+
+✔ Simple actions
+✔ Quick testing
+✔ Basic apps
+
+---
+
+## M3_Lec-3 : Text (05:24)
+
