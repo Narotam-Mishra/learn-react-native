@@ -4,9 +4,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={[styles.text, styles.bold]}>Mobile App dev using React Native</Text>
-      <Text style={[styles.text, styles.italic]}>React Native by Meta for Mobile</Text>
-      <Text style={[styles.text, styles.underline]}>React Native is cool</Text>
+      <Text>Lorem ipsum dolor sit, amet consectetur adipisicing elit. {"\n"} Natus eligendi provident magnam omnis fugit distinctio? Maiores nihil necessitatibus rerum commodi laboriosam obcaecati, officiis facilis aliquid ipsum voluptatibus voluptatem molestiae doloremque dolore cupiditate et in explicabo dolorum odit placeat atque numquam fugit, enim possimus! Quis mollitia reiciendis excepturi dolorum, esse quam earum dignissimos debitis, ipsam nihil eius iste perspiciatis? Delectus, autem!</Text>
     </View>
   );
 }
