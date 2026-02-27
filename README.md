@@ -2125,3 +2125,115 @@ You can nest `<Text>` components:
 
 ---
 
+## M3_Lec-5 : Stylesheet (4:17)
+
+## 🎨 React Native – `StyleSheet` (Short Notes)
+
+---
+
+### 🔹 What is `StyleSheet`?
+
+`StyleSheet` is a built-in API in React Native used to **create optimized and reusable styles**.
+
+It helps:
+
+* Improve performance
+* Keep code clean
+* Reuse styles easily
+
+```js
+import { StyleSheet } from 'react-native';
+```
+
+---
+
+## 🧱 Basic Example
+
+```jsx
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Hello React Native 👋</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'blue',
+  },
+});
+
+export default App;
+```
+
+---
+
+## 🔑 Why Use `StyleSheet.create()`?
+
+✔ Better performance (internally optimized)
+✔ Code readability
+✔ Avoid inline style clutter
+✔ Easier maintenance
+
+---
+
+## 📌 How It Works
+
+```js
+const styles = StyleSheet.create({
+  styleName: {
+    property: value
+  }
+});
+```
+
+Use it like:
+
+```jsx
+<View style={styles.styleName} />
+```
+
+---
+
+## 🔥 Combining Styles
+
+```jsx
+<Text style={[styles.title, { color: 'red' }]}>
+  Combined Style
+</Text>
+```
+
+* Array allows multiple styles
+* Later styles override earlier ones
+
+---
+
+## ⚠️ Important Notes
+
+* Works similar to CSS but uses **camelCase**
+* No CSS units (`px`, `em` not required)
+* Uses Flexbox for layout by default
+
+---
+
+## 📌 When to Use?
+
+✔ Medium & large apps
+✔ Reusable components
+✔ Clean production code
+
+---
+
+## M3_Lec-5 : ScrollView (4:31)
+

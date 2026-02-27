@@ -1,11 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, SafeAreaViewBase, ScrollView, ScrollViewBase, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Lorem ipsum dolor sit, amet consectetur adipisicing elit. {"\n"} Natus eligendi provident magnam omnis fugit distinctio? Maiores nihil necessitatibus rerum commodi laboriosam obcaecati, officiis facilis aliquid ipsum voluptatibus voluptatem molestiae doloremque dolore cupiditate et in explicabo dolorum odit placeat atque numquam fugit, enim possimus! Quis mollitia reiciendis excepturi dolorum, esse quam earum dignissimos debitis, ipsam nihil eius iste perspiciatis? Delectus, autem!</Text>
-    </View>
+      <SafeAreaViewBase>
+        <ScrollView>
+        <Text style={styles.text}>Item-1</Text>
+        <Text style={styles.text}>Item-2</Text>
+        <Text style={styles.text}>Item-3</Text>
+        <Text style={styles.text}>Item-4</Text>
+        <Text style={styles.text}>Item-5</Text>
+        <Text style={styles.text}>Item-6</Text>
+        <Text style={styles.text}>Item-7</Text>
+        <Text style={styles.text}>Item-8</Text>
+        <Text style={styles.text}>Item-9</Text>
+        <Text style={styles.text}>Item-10</Text>
+        <Text style={styles.text}>Item-11</Text>
+        <Text style={styles.text}>Item-12</Text>
+        <Text style={styles.text}>Item-13</Text>
+        <Text style={styles.text}>Item-41</Text>
+      </ScrollView>
+      </SafeAreaViewBase>
   );
 }
 
@@ -16,16 +30,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  box1:{
+    height: 100,
+    width: 100,
+    backgroundColor: "red",
+    margin: 5,
+  },
+  box2:{
+    height: 100,
+    width: 100,
+    backgroundColor: "blue",
+    margin: 5,
+  },
   text:{
-    fontSize: 24,
-  },
-  bold:{
-    fontStyle: "bold",
-  },
-  italic:{
-    fontStyle: "italic"
-  },
-  underline:{
-    textDecorationLine: "underline"
+    fontSize: 32,
+    fontWeight: 'bold',
+    paddingVertical: 30,
   }
 });
