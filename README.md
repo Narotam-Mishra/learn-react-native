@@ -2237,3 +2237,90 @@ Use it like:
 
 ## M3_Lec-5 : ScrollView (4:31)
 
+## 📜 React Native – `ScrollView` Component (Short Notes)
+
+---
+
+### 🔹 What is `ScrollView`?
+
+`ScrollView` is a built-in component used to create a **scrollable container**.
+
+Use it when:
+
+* Content is larger than screen size
+* You want vertical or horizontal scrolling
+
+```js id="u3k2f8"
+import { ScrollView } from 'react-native';
+```
+
+---
+
+## 🧱 Basic Example (Vertical Scroll)
+
+```jsx id="h9v2lp"
+import React from 'react';
+import { ScrollView, View, Text } from 'react-native';
+
+const App = () => {
+  return (
+    <ScrollView>
+      <View style={{ height: 200, backgroundColor: 'lightblue', margin: 10 }} />
+      <View style={{ height: 200, backgroundColor: 'lightgreen', margin: 10 }} />
+      <View style={{ height: 200, backgroundColor: 'lightcoral', margin: 10 }} />
+    </ScrollView>
+  );
+};
+
+export default App;
+```
+
+---
+
+## 🔁 Horizontal Scroll Example
+
+```jsx id="l7xq1t"
+<ScrollView horizontal={true}>
+  <View style={{ width: 200, height: 200, backgroundColor: 'red', margin: 10 }} />
+  <View style={{ width: 200, height: 200, backgroundColor: 'blue', margin: 10 }} />
+</ScrollView>
+```
+
+---
+
+## 🔑 Important Props
+
+| Prop                             | Description                    |
+| -------------------------------- | ------------------------------ |
+| `horizontal`                     | Enables horizontal scrolling   |
+| `showsVerticalScrollIndicator`   | Show/hide vertical scrollbar   |
+| `showsHorizontalScrollIndicator` | Show/hide horizontal scrollbar |
+| `contentContainerStyle`          | Style inner content            |
+| `pagingEnabled`                  | Enables page-by-page scrolling |
+
+---
+
+## ⚠️ Important Notes
+
+* ❗ Renders all children at once (not optimized for large lists)
+* ❗ Not suitable for long data lists
+
+👉 For large lists use:
+
+* `FlatList`
+* `SectionList`
+
+---
+
+## 📌 When to Use?
+
+✔ Small scrollable screens
+✔ Forms
+✔ Static content
+
+---
+
+
+
+## M4_Lec-1 : Image (4:31)
+
