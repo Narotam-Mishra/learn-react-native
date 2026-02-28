@@ -2320,7 +2320,186 @@ export default App;
 
 ---
 
-
-
 ## M4_Lec-1 : Image (4:31)
 
+## 🖼 React Native – `Image` Component (Short Notes)
+
+---
+
+### 🔹 What is `Image`?
+
+`Image` is used to **display images** in React Native apps.
+
+You can load:
+
+* Local images
+* Remote images (from URL)
+
+```js id="k29xq1"
+import { Image } from 'react-native';
+```
+
+---
+
+## 🧱 Basic Example (Local Image)
+
+```jsx id="p8l2mv"
+import React from 'react';
+import { View, Image } from 'react-native';
+
+const App = () => {
+  return (
+    <View>
+      <Image
+        source={require('./assets/profile.png')}
+        style={{ width: 150, height: 150 }}
+      />
+    </View>
+  );
+};
+
+export default App;
+```
+
+---
+
+## 🌐 Remote Image Example
+
+```jsx id="x1z9bt"
+<Image
+  source={{ uri: 'https://example.com/image.jpg' }}
+  style={{ width: 200, height: 200 }}
+/>
+```
+
+---
+
+## 🔑 Important Props
+
+| Prop         | Description                                              |
+| ------------ | -------------------------------------------------------- |
+| `source`     | Image source (local or URL)                              |
+| `style`      | Set width & height (required)                            |
+| `resizeMode` | How image fits (`cover`, `contain`, `stretch`, `center`) |
+| `blurRadius` | Adds blur effect                                         |
+
+---
+
+## 📏 resizeMode Values
+
+```jsx id="n3kq7r"
+<Image
+  source={{ uri: 'https://example.com/image.jpg' }}
+  style={{ width: 200, height: 200 }}
+  resizeMode="cover"
+/>
+```
+
+Common values:
+
+* `cover` (default)
+* `contain`
+* `stretch`
+* `center`
+
+---
+
+## ⚠️ Important Notes
+
+* ❗ Must define `width` and `height`
+* ❗ Remote images require internet
+* ❗ Large images can affect performance
+
+---
+
+## 📌 When to Use?
+
+✔ Profile pictures
+✔ Icons
+✔ Banners
+✔ Background images
+
+---
+
+## M4_Lec-2 : Image Background (07:40)
+
+## 🌄 React Native – `ImageBackground` Component (Short Notes)
+
+---
+
+### 🔹 What is `ImageBackground`?
+
+`ImageBackground` is a wrapper around `Image` that allows you to **use an image as a background** and place content (Text, View, etc.) on top of it.
+
+```js id="bg1x9k"
+import { ImageBackground } from 'react-native';
+```
+
+---
+
+## 🧱 Basic Example
+
+```jsx id="bg7p2m"
+import React from 'react';
+import { View, Text, ImageBackground } from 'react-native';
+
+const App = () => {
+  return (
+    <ImageBackground
+      source={{ uri: 'https://example.com/background.jpg' }}
+      style={{ width: '100%', height: 200, justifyContent: 'center', alignItems: 'center' }}
+      resizeMode="cover"
+    >
+      <Text style={{ color: 'white', fontSize: 20 }}>
+        Welcome 👋
+      </Text>
+    </ImageBackground>
+  );
+};
+
+export default App;
+```
+
+---
+
+## 🔑 Important Props
+
+| Prop         | Description                             |
+| ------------ | --------------------------------------- |
+| `source`     | Background image (local or remote)      |
+| `style`      | Required (width & height)               |
+| `resizeMode` | `cover`, `contain`, `stretch`, `center` |
+| `imageStyle` | Style only the image                    |
+
+---
+
+## 🎨 Example with `imageStyle`
+
+```jsx id="bg3k8t"
+<ImageBackground
+  source={require('./assets/bg.png')}
+  style={{ width: 300, height: 200 }}
+  imageStyle={{ borderRadius: 15 }}
+>
+  <Text>Content on Image</Text>
+</ImageBackground>
+```
+
+---
+
+## ⚠️ Important Notes
+
+* ❗ Must define width & height
+* ❗ Used when content needs to appear over image
+* ❗ For complex overlays, combine with `View`
+
+---
+
+## 📌 When to Use?
+
+✔ Hero banners
+✔ Profile covers
+✔ Card backgrounds
+✔ Full-screen background images
+
+---

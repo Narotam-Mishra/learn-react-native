@@ -1,23 +1,38 @@
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image, Text, ImageBackground } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <Image source={require('./assets/icon.png')} style={styles.image} /> */}
-      <Image source={{ uri: "https://images.unsplash.com/photo-1770873263537-fbb8d39b6103?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }} style={styles.image} />
-    </View>
+    <ImageBackground source={{ uri: "https://picsum.photos/200" }} style={styles.container} imageStyle={styles.backgroundImage}>
+      <View style={styles.content}>
+        <Text style={styles.title}>Welcome to Native App</Text>
+        <Text style={styles.subtitle}>Discover the amazing deatures of React Native App</Text>
+        <Image/>
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    resizeMode: "contain",
+    justifyContent: "center",
+    alignItems: "center"
   },
-  image:{
-    width: 200,
-    height: 200,
+  content:{
+    padding: 20,
+    borderRadius: 10,
+    backgroundColor: "rgba(255,0,0,1)"
+  },
+  backgroundImage:{
+    opacity: 0.8,
+  },
+  title:{
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  subtitle:{
+    fontSize: 18
   }
 });
